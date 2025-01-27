@@ -1,0 +1,20 @@
+networks:
+  shieldteq:
+
+services:
+  st-postgres:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    container_name: postgres
+    environment:
+      POSTGRES_USER: ${AUTH_DB_ADMIN}
+      POSTGRES_PASSWORD: ${AUTH_DB_PASSWORD}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ${USER_HOME}/PGDB:/var/lib/postgres/data
+      - ./init-db-users.sh:/docker-entrypoint-initdb.d/init-db-users.sh
+    ports:
+      - "5432:5432"
+    networks:
+      - shieldteq
