@@ -2,7 +2,7 @@ spring:
   application:
     name: inventory
   datasource:
-    url: jdbc:postgresql://${DB_URL:localhost}:5432/edm
+    url: jdbc:postgresql://${DB_URL:localhost}:5432/st_inventory
     username: ${DB_USER:admin}
     password: ${DB_PASSWORD:secret124}
     driver-class-name: org.postgresql.Driver
