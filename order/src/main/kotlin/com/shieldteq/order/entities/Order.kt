@@ -11,5 +11,8 @@ data class Order(
     val id: String? = null,
     val orderDate: LocalDateTime,
     val accountId: String,
-    val status: String
+    val status: String,
+    @OneToMany(cascade = [CascadeType.ALL], orphanRemoval = true, fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
+    val items: Set<Item>
 ) : BaseEntity()

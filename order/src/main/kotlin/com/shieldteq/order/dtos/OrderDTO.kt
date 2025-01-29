@@ -6,5 +6,5 @@ data class OrderDTO(
     val id: String,
     val orderDate: LocalDateTime,
     val status: String,
-    val items: List<ItemDTO>
+    var items: List<ItemDTO>
 )
