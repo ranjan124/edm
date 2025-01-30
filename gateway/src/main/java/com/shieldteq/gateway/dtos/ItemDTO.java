@@ -1,6 +1,6 @@
 package com.shieldteq.gateway.dtos;
 
-record ItemDTO(
+public record ItemDTO(
         String id,
         String name,
         String description,

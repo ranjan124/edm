@@ -1,6 +1,6 @@
 package com.shieldteq.gateway.dtos;
 
-record PaymentDTO(
+public record PaymentDTO(
         String id,
         String orderId,
         String customerId,

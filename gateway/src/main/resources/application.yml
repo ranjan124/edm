@@ -9,7 +9,8 @@ spring:
           lower-case-service-id: true
 server:
   port: 7000
-
+app:
+  base-url: http://localhost:7000
 management:
   endpoints:
     web:
