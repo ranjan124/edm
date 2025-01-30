@@ -1,8 +1,8 @@
 spring:
   application:
-    name: customer
+    name: payment
   datasource:
-    url: jdbc:postgresql://${DB_URL:localhost}:5432/edm
+    url: jdbc:postgresql://${DB_URL:localhost}:5432/st_payment
     username: ${DB_USER:admin}
     password: ${DB_PASSWORD:secret124}
     driver-class-name: org.postgresql.Driver
@@ -14,4 +14,30 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
 server:
-  port: 7010
+  port: 7040
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+    shutdown:
+      access: unrestricted
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka/
+    register-with-eureka: true
+    fetch-registry: true
