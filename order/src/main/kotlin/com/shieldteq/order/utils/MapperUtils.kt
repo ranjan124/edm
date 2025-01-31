@@ -10,7 +10,7 @@ import java.time.LocalDateTime
 
 fun CreateOrderDTO.toOrder(): Order = Order(
     orderDate = LocalDateTime.now(),
-    accountId = accountId,
+    customerNumber = customerNumber,
     status = "CREATED",
     items = items.map { it.toItem() }.toSet()
 )

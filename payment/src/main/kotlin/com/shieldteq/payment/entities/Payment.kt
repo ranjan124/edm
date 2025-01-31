@@ -9,6 +9,6 @@ data class Payment(
     @GeneratedValue(strategy = GenerationType.UUID)
     val id: String? = null,
     val orderId: String,
-    val customerId: String,
+    val customerNumber: String,
     val amount: Double
 ) : BaseEntity()

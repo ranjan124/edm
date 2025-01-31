@@ -10,7 +10,7 @@ data class Order(
     @GeneratedValue(strategy = GenerationType.UUID)
     val id: String? = null,
     val orderDate: LocalDateTime,
-    val accountId: String,
+    val customerNumber: String,
     val status: String,
     @OneToMany(cascade = [CascadeType.ALL], orphanRemoval = true, fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")

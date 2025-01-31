@@ -29,6 +29,6 @@ public interface CustomerSummaryClient {
     @GetExchange(value = "/st/order-service/orders/all/{customerNumber}", accept = MediaType.APPLICATION_JSON_VALUE)
     Mono<ResponseDTO<List<OrderDTO>>> getCustomerOrders(@PathVariable("customerNumber") String customerNumber);
 
-    @GetExchange(value = "/st/payment/payment/byCustomerId/{customerNumber}", accept = MediaType.APPLICATION_JSON_VALUE)
+    @GetExchange(value = "/st/payment/payment/byCustomerNumber/{customerNumber}", accept = MediaType.APPLICATION_JSON_VALUE)
     Mono<ResponseDTO<List<PaymentDTO>>> getCustomerPayments(@PathVariable("customerNumber") String customerNumber);
 }

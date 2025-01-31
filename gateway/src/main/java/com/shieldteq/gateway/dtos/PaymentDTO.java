@@ -3,7 +3,7 @@ package com.shieldteq.gateway.dtos;
 public record PaymentDTO(
         String id,
         String orderId,
-        String customerId,
+        String customerNumber,
         Double amount
 ) {
 }

@@ -21,9 +21,9 @@ class PaymentController(private val paymentService: PaymentService) {
         return ResponseEntity.ok(ResponseDTO(Constants.STATUS_200, Constants.STATUS_200_MESSAGE, paymentService.getPaymentsByOrderId(orderId)))
     }
 
-    @GetMapping("/byCustomerId/{customerId}")
-    fun getPaymentsByCustomerId(@PathVariable customerId: String): ResponseEntity<ResponseDTO<List<PaymentDTO>>> {
-        return ResponseEntity.ok(ResponseDTO(Constants.STATUS_200, Constants.STATUS_200_MESSAGE, paymentService.getPaymentsByCustomerId(customerId)))
+    @GetMapping("/byCustomerNumber/{customerNumber}")
+    fun getPaymentsByCustomerId(@PathVariable customerNumber: String): ResponseEntity<ResponseDTO<List<PaymentDTO>>> {
+        return ResponseEntity.ok(ResponseDTO(Constants.STATUS_200, Constants.STATUS_200_MESSAGE, paymentService.getPaymentsByCustomerNumber(customerNumber)))
     }
 
     @PostMapping

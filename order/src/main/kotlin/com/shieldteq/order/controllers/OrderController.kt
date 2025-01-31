@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.*
 class OrderController(
     private val orderService: OrderService
 ) {
-    @GetMapping("/all/{accountId}")
-    fun getAllOrders(@PathVariable("accountId") accountId: String): ResponseEntity<ResponseDTO<List<OrderDTO>>> {
+    @GetMapping("/all/{customerNumber}")
+    fun getAllOrders(@PathVariable("customerNumber") customerNumber: String): ResponseEntity<ResponseDTO<List<OrderDTO>>> {
         val resp = ResponseDTO(
             message = Constants.STATUS_200_MESSAGE,
             status = Constants.STATUS_200,
-            data = orderService.getOrders(accountId)
+            data = orderService.getOrders(customerNumber)
         )
         return ResponseEntity.ok(resp)
     }

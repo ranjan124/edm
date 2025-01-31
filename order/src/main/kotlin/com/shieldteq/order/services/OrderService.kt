@@ -6,7 +6,7 @@ import com.shieldteq.order.dtos.UpdateOrderDTO
 
 interface OrderService {
     fun createOrder(createOrderDto: CreateOrderDTO): OrderDTO
-    fun getOrders(accountId: String): List<OrderDTO>
+    fun getOrders(customerNumber: String): List<OrderDTO>
     fun getOrderById(id: String): OrderDTO
     fun deleteOrder(id: String): String
     fun updateOrder(id: String, updateOrderDto: UpdateOrderDTO): OrderDTO

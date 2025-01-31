@@ -115,24 +115,6 @@ public class CustomerController {
     }
 
     @Operation(
-            summary = "Get an existing customer"
-    )
-    @ApiResponses({
-            @ApiResponse(
-                    responseCode = "200",
-                    description = "Request processed successfully"
-            )}
-    )
-    @GetMapping("/byCustomerNumber")
-    public Mono<ResponseEntity<CustomerDTO>> getCustomerByNumber(
-            @Valid
-            @RequestParam
-            @Pattern(regexp = "^\\d{7,}$", message = "Customer number is not valid")
-            String customerNumber) {
-        return Mono.just(ResponseEntity.ok(customerService.getCustomer(customerNumber)));
-    }
-
-    @Operation(
             summary = "Delete an existing customer"
     )
     @ApiResponses({

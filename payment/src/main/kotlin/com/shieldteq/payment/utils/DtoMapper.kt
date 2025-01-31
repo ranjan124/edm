@@ -8,7 +8,7 @@ fun Payment.toPaymentDTO(): PaymentDTO {
     return PaymentDTO(
         id = id!!,
         orderId = orderId,
-        customerId = customerId,
+        customerNumber = customerNumber,
         amount = amount
     )
 }
@@ -16,7 +16,7 @@ fun Payment.toPaymentDTO(): PaymentDTO {
 fun CreatePaymentDTO.toPayment(): Payment {
     return Payment(
         orderId = orderId,
-        customerId = customerId,
+        customerNumber = customerNumber,
         amount = amount
     )
 }

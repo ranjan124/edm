@@ -23,7 +23,7 @@ class PaymentServiceImpl(private val paymentRepository: PaymentRepository) : Pay
         return paymentRepository.findAllByOrderId(orderId).map { it.toPaymentDTO() }
     }
 
-    override fun getPaymentsByCustomerId(customerId: String): List<PaymentDTO> {
-        return paymentRepository.findAllByCustomerId(customerId).map { it.toPaymentDTO() }
+    override fun getPaymentsByCustomerNumber(customerId: String): List<PaymentDTO> {
+        return paymentRepository.findAllByCustomerNumber(customerId).map { it.toPaymentDTO() }
     }
 }

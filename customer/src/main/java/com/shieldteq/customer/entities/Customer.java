@@ -12,11 +12,11 @@ import lombok.Setter;
 public class Customer extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    String id;
+    private String id;
     @NotBlank
-    String customerNumber;
-    String name;
-    String email;
-    String phone;
-    boolean active;
+    private String customerNumber;
+    private String name;
+    private String email;
+    private String phone;
+    private boolean active;
 }

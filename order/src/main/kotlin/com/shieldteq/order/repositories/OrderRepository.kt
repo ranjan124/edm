@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface OrderRepository : JpaRepository<Order, String> {
-    @Query("select o from Order o join fetch o.items where o.accountId = :accountId")
-    fun findOrderByAccountId(accountId: String): List<Order>
+    @Query("select o from Order o join fetch o.items where o.customerNumber = :customerNumber")
+    fun findOrderByCustomerNumber(customerNumber: String): List<Order>
 }

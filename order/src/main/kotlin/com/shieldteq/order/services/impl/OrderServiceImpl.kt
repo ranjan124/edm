@@ -16,8 +16,8 @@ class OrderServiceImpl(private val orderRepository: OrderRepository) : OrderServ
         return orderRepository.save(createOrderDto.toOrder()).toOrderDTO()
     }
 
-    override fun getOrders(accountId: String): List<OrderDTO> {
-        return orderRepository.findOrderByAccountId(accountId).map { it.toOrderDTO() }
+    override fun getOrders(customerNumber: String): List<OrderDTO> {
+        return orderRepository.findOrderByCustomerNumber(customerNumber).map { it.toOrderDTO() }
     }
 
     override fun getOrderById(id: String): OrderDTO {
