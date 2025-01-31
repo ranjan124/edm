@@ -18,3 +18,16 @@ services:
       - "5432:5432"
     networks:
       - shieldteq
+  st-axon:
+    image: axoniq/axonserver
+    restart: always
+    container_name: axonserver
+    volumes:
+      - ${USER_HOME}/AXON/data:/axonserver/data
+      - ${USER_HOME}/AXON/events:/axonserver/events
+      - ${USER_HOME}/AXON/config:/axonserver/config
+    ports:
+      - "8024:8024"
+      - "8124:8124"
+    networks:
+      - shieldteq
