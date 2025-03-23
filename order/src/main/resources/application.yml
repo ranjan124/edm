@@ -39,3 +39,6 @@ eureka:
       defaultZone: http://localhost:9000/eureka/
     register-with-eureka: true
     fetch-registry: true
+axon:
+  axonserver:
+    servers: localhost:8124

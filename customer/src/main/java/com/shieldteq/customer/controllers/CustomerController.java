@@ -4,6 +4,7 @@ import com.shieldteq.customer.Constants;
 import com.shieldteq.customer.dtos.CustomerCreateDTO;
 import com.shieldteq.customer.dtos.CustomerDTO;
 import com.shieldteq.customer.dtos.CustomerUpdateDTO;
+import com.shieldteq.customer.dtos.Something;
 import com.shieldteq.customer.dtos.response.ErrorResponseDTO;
 import com.shieldteq.customer.dtos.response.ResponseDTO;
 import com.shieldteq.customer.services.CustomerService;
@@ -22,6 +23,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.UUID;
 
 @Tag(
         name = "Customer REST endpoints",
@@ -65,6 +68,7 @@ public class CustomerController {
     @PostMapping("/create")
     public Mono<ResponseEntity<ResponseDTO<CustomerDTO>>> createCustomer(@Valid @RequestBody CustomerCreateDTO customerDTO) {
         CustomerDTO customer = customerService.createCustomer(customerDTO);
+        new Something.Reduce(UUID.randomUUID());
         return Mono.just(ResponseEntity.status(HttpStatus.CREATED)
                 .body(new ResponseDTO<>(Constants.STATUS_201, Constants.STATUS_200_MESSAGE, customer)));
     }
